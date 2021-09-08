@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Storage</title>
+    <style>
+        #InsertData{
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            margin-top: 50px;
+        }
+        #inputBox{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            padding: 10px 110px;
+            margin: 5px;
+        }
+        #btnAll{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #btnKey{
+            padding: 10px 60px; 
+            cursor: pointer;
+            margin: 10px;
+        }
+        #InsertDatashow{
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+          @media screen and (min-width: 1180px) {
+            #InsertData{
+                width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 30px;
+                margin-top: 50px;
+            }
+            input{         
+                padding: 10px 115px;
+                margin: 0px;
+            }
+            #btnKey{
+                padding: 10px 60px; 
+                cursor: pointer;
+            }
+            #InsertDatashow{
+                width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }    
+          }
+          @media screen and (max-width: 360px) {
+            #InsertData {
+              width: 90%;
+              height: auto;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            #InsertDatashow{
+                width: 90%;
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            input{
+                padding: 5px 50px;
+                margin: 3px;
+            }
+            #btnKey{
+                padding: 5px 20px; 
+                cursor: pointer;
+            }
+          }
+    </style>
+</head>
+<body>
+        <fieldset id="InsertData">
+            <legend>Insert Data</legend>
+            <div id="inputBox">
+                <input type="text" name="fName" id="nameKey" placeholder="Enter Your Name Here">
+                <input type="number" name="ageKey" id="ageKey" placeholder="Enter Your Age Here">
+                <input type="number" name="contactKey" id="contactKey" placeholder="Enter Your Number Here">
+                <input type="email" name="emialKey" id="emailKey" placeholder="Enter Your Email Here">
+            </div>
+            <div id="btnAll">
+                <button type="submit" id="btnKey" onclick="btnKey()">Insert Data</button>
+                <button type="submit" id="btnKey" onclick="btnClearKey()">Clear Data</button>
+            </div>    
+        </fieldset>
+        <fieldset id="InsertDatashow">
+            <legend>Show Insert Data</legend>
+            <div id="isOutput"></div>
+        </fieldset>
+    <script> 
+        //btnclick bio-info coolection input
+        function btnKey() {
+            let nameKey = document.getElementById("nameKey").value;
+            let ageKey = document.getElementById("ageKey").value;
+            let contactKey =parseInt(document.getElementById("contactKey").value);
+            let emailName = document.getElementById("emailKey").value;
+            if (nameKey=="" || emailName=="") {
+                alert("Please Enter Your Valid Info");
+            }
+            else {            
+            document.getElementById("isOutput").innerHTML = "Name : " + " " + nameKey + "<br>Age : " + " " + ageKey + "<br>Contact : " + " " + contactKey + "<br>Email : " + " "+ emailName ;            
+            }
+        }
+        function  btnClearKey(){
+               document.getElementById("nameKey").value = "";
+               document.getElementById("ageKey").value = "";
+               document.getElementById("contactKey").value = "";
+               document.getElementById("emailKey").value = "";
+        }
+    </script>
+</body>
+</html>
